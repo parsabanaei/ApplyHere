@@ -19,6 +19,7 @@ import {
   FaBuilding,
   FaBell,
   FaCheckCircle,
+  FaDollarSign,
 } from "react-icons/fa";
 import { ThemeToggle } from "./components/ThemeToggle";
 import FloatingLines from "./components/FloatingLines";
@@ -56,6 +57,12 @@ export default function Home() {
       title: "Company Insights",
       description: "Research companies with profiles, culture summaries, and recent updates.",
       gradient: "from-cyan-500 to-blue-500",
+    },
+    {
+      icon: <FaDollarSign />,
+      title: "Salary Predictor",
+      description: "Estimate realistic salary ranges based on role, location, and experience.",
+      gradient: "from-emerald-500 to-teal-500",
     },
     {
       icon: <FaBell />,
@@ -280,7 +287,9 @@ export default function Home() {
               >
                 <Card>
                   <CardBody className="p-6">
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 italic">&quot;{testimonial.content}&quot;</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                      &quot;{testimonial.content}&quot;
+                    </p>
                     <Divider className="my-4" />
                     <div className="flex items-center gap-3">
                       <Avatar 
@@ -290,7 +299,9 @@ export default function Home() {
                       />
                       <div>
                         <p className="font-bold">{testimonial.name}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {testimonial.role}
+                        </p>
                       </div>
                     </div>
                   </CardBody>
@@ -327,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4">
+      <footer className="bg-gray-900 dark:bg:black text-white py-12 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">
@@ -353,7 +364,3 @@ export default function Home() {
     </main>
   );
 }
-
-
- // // TODO: Review UI spacing here – note added by Rasha
- //more comments 

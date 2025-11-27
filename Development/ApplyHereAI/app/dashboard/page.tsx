@@ -18,9 +18,9 @@ import {
   FaChartLine,
   FaUserTie,
   FaCheckCircle,
-  FaBell,
+  FaDollarSign,
+  FaBrain,
   FaArrowRight,
-  FaBrain, // <- added
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -76,6 +76,13 @@ export default function DashboardPage() {
       description: "View AI-powered recommendations based on your profile.",
       path: "/dashboard/ai-insights",
       color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: <FaDollarSign className="text-3xl" />,
+      title: "Salary Predictor",
+      description: "Estimate realistic salary ranges for your target role.",
+      path: "/dashboard/salary-predictor",
+      color: "from-emerald-500 to-teal-500",
     },
   ];
 
@@ -137,7 +144,7 @@ export default function DashboardPage() {
             <Card isPressable className="hover:scale-105 transition-transform">
               <CardBody className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${stat.color} flex items-center justify-center shadow-lg`}></div>
+                  <div className={`w-12 h-12 rounded-xl ${stat.color} flex items-center justify-center shadow-lg`} />
                   <Chip size="sm" color={stat.chipColor} variant="flat">
                     New
                   </Chip>
@@ -197,7 +204,7 @@ export default function DashboardPage() {
                   transition={{ delay: 1.0 + index * 0.1 }}
                   className="flex items-start gap-4 pb-4 border-b last:border-0 last:pb-0 dark:border-gray-700"
                 >
-                  <div className="w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-blue-500 mt-2" />
                   <div className="flex-1">
                     <p className="font-medium">{activity.action}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
