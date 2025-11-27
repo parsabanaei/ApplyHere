@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardBody, CardHeader, Button, Progress, Chip, Skeleton, Breadcrumbs, BreadcrumbItem } from "@heroui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Button,
+  Progress,
+  Chip,
+  Skeleton,
+  Breadcrumbs,
+  BreadcrumbItem,
+} from "@heroui/react";
 import { useRouter } from "next/navigation";
 import {
   FaFileAlt,
@@ -10,6 +20,7 @@ import {
   FaCheckCircle,
   FaBell,
   FaArrowRight,
+  FaBrain, // <- added
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -59,6 +70,13 @@ export default function DashboardPage() {
       path: "/dashboard/tracker",
       color: "from-orange-500 to-red-500",
     },
+    {
+      icon: <FaBrain className="text-3xl" />,
+      title: "AI Insights",
+      description: "View AI-powered recommendations based on your profile.",
+      path: "/dashboard/ai-insights",
+      color: "from-purple-500 to-pink-500",
+    },
   ];
 
   const recentActivity = [
@@ -95,7 +113,7 @@ export default function DashboardPage() {
       <Breadcrumbs className="mb-4">
         <BreadcrumbItem>Dashboard</BreadcrumbItem>
       </Breadcrumbs>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -119,8 +137,7 @@ export default function DashboardPage() {
             <Card isPressable className="hover:scale-105 transition-transform">
               <CardBody className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${stat.color} flex items-center justify-center shadow-lg`}>
-                  </div>
+                  <div className={`w-12 h-12 rounded-xl ${stat.color} flex items-center justify-center shadow-lg`}></div>
                   <Chip size="sm" color={stat.chipColor} variant="flat">
                     New
                   </Chip>
@@ -183,7 +200,9 @@ export default function DashboardPage() {
                   <div className="w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
                   <div className="flex-1">
                     <p className="font-medium">{activity.action}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{activity.time}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {activity.time}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -207,11 +226,15 @@ export default function DashboardPage() {
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-gray-700 dark:text-gray-300">Resume Views</span>
-                  <Chip size="sm" color="primary" variant="flat">75%</Chip>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Resume Views
+                  </span>
+                  <Chip size="sm" color="primary" variant="flat">
+                    75%
+                  </Chip>
                 </div>
-                <Progress 
-                  value={75} 
+                <Progress
+                  value={75}
                   color="primary"
                   showValueLabel={true}
                   className="max-w-full"
@@ -219,11 +242,15 @@ export default function DashboardPage() {
               </div>
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-gray-700 dark:text-gray-300">Interview Rate</span>
-                  <Chip size="sm" color="success" variant="flat">25%</Chip>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Interview Rate
+                  </span>
+                  <Chip size="sm" color="success" variant="flat">
+                    25%
+                  </Chip>
                 </div>
-                <Progress 
-                  value={25} 
+                <Progress
+                  value={25}
                   color="success"
                   showValueLabel={true}
                   className="max-w-full"
@@ -231,11 +258,15 @@ export default function DashboardPage() {
               </div>
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-gray-700 dark:text-gray-300">Response Rate</span>
-                  <Chip size="sm" color="warning" variant="flat">60%</Chip>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Response Rate
+                  </span>
+                  <Chip size="sm" color="warning" variant="flat">
+                    60%
+                  </Chip>
                 </div>
-                <Progress 
-                  value={60} 
+                <Progress
+                  value={60}
                   color="warning"
                   showValueLabel={true}
                   className="max-w-full"
@@ -248,4 +279,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
