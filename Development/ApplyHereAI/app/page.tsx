@@ -355,5 +355,4 @@ export default function Home() {
 }
 
 
-
-// notes for Rasha contribution 
+// TODO: Review UI spacing here – note added by Rasha
