@@ -1,299 +1,175 @@
-# ApplyHere.ai - AI-Powered Job Application Assistant
+# ApplyHere.ai 🚀
 
-A modern, full-featured Next.js web application that helps job seekers streamline their application process with AI-powered tools, resume building, application tracking, and more.
+> Your AI Powered Job Application Assistant
 
-## Features
+ApplyHere.ai is a comprehensive, frontend only Next.js 15 application designed to streamline the job search process with intelligent resume building, application tracking, and interview preparation tools.
 
-### 🎨 **Production-Grade Landing Page**
-- Clean, modern hero section with animations
-- Feature showcase with icons
-- Testimonials section
-- Professional footer with navigation
+## 🌟 Features
 
-### 🔐 **Authentication System**
-- Login and registration pages
-- Client-side authentication using LocalStorage
-- Protected dashboard routes
-- Session persistence
+- **Smart Resume & Cover Letter Builder** - Create ATS friendly resumes with multiple professional templates
+- **Resume vs Job Description Comparator** - Compare your resume against job descriptions with keyword matching
+- **Interview Preparation Dashboard** - Access common questions, tips, and company research tools
+- **Application Tracker** - Kanban-style board to manage your job applications
+- **Follow Up & Thank-You Templates** - Pre written, customizable templates
+- **Company Insights** - Research tools for target companies
+- **Job Alert Feed** - Mock job listings with filtering and search
 
-### 📊 **Comprehensive Dashboard**
-- Overview with statistics
-- Recent activity feed
-- Quick action shortcuts
-- Collapsible sidebar navigation
-- Theme toggle (Light/Dark mode)
-
-### 📝 **Resume & Cover Letter Builder**
-- Split-panel editor with live preview
-- Form-based resume input
-- Auto-generated cover letters
-- PDF export functionality
-- LocalStorage persistence
-
-### 🔍 **Resume Comparator**
-- Dual-panel text comparison
-- Keyword extraction and matching
-- Match percentage calculation
-- Missing keyword identification
-- Suggestions for improvement
-
-### 💼 **Interview Preparation**
-- Common interview questions by category
-- Sample answer approaches
-- Interview tips and best practices
-- Company research notes
-- Progress tracking
-
-### 📧 **Letter Templates**
-- Pre-written professional templates
-- Thank-you letters
-- Follow-up emails
-- Networking introductions
-- Customizable placeholders
-- Copy to clipboard functionality
-
-### 📋 **Application Tracker (Kanban Board)**
-- Drag-and-drop interface (visual only, fully functional via status changes)
-- Six status columns: Wishlist, Applied, Interviewing, Offer, Rejected, Accepted
-- Job cards with details
-- Add, edit, and delete applications
-- LocalStorage persistence
-
-### 🏢 **Company Insights**
-- Research companies with detailed information
-- Industry filtering
-- Search functionality
-- Company culture and news
-- Modal detail view
-
-### 🔔 **Job Alerts Feed**
-- Browse curated job listings
-- Filter by job type and location
-- Search functionality
-- Detailed job descriptions
-- Save jobs to tracker
-
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: NextUI (now deprecated, but functional)
+- **UI Components**: NextUI
 - **Animations**: Framer Motion
-- **Icons**: React Icons
-- **PDF Export**: html2pdf.js
-- **Date Handling**: date-fns
 - **State Management**: React Context + LocalStorage
+- **TypeScript**: Full type safety
+- **PDF Export**: html2pdf.js
 
-## Design System
+## 🚀 Quick Start
 
-### Color Palette
+### Prerequisites
 
-**Light Theme:**
-- Primary: Slate blue (#475569, #64748b)
-- Accent: Indigo (#4f46e5, #6366f1)
-- Background: White, Light grays
-- Text: Dark slate shades
+- Node.js 18+
+- npm or yarn
 
-**Dark Theme:**
-- Primary: Light slate (#cbd5e1, #94a3b8)
-- Accent: Light indigo (#818cf8, #a5b4fc)
-- Background: Dark slate shades
-- Text: Light grays
+### Installation
 
-### Typography
-- Font: Inter (system fallback)
-- Clean, professional hierarchy
-- Generous whitespace
-
-## Installation
-
-1. **Install dependencies:**
 ```bash
+# Clone the repository
+git clone git@github.com:parsabanaei/ApplyHere.git
+cd ApplyHere
+
+# Install dependencies
 npm install
-```
 
-2. **Run the development server:**
-```bash
+# Run development server
 npm run dev
+
+# Open http://localhost:3000
 ```
 
-3. **Open your browser:**
-Navigate to [http://localhost:3000](http://localhost:3000)
+### Build for Production
 
-## Usage
-
-### First Time Setup
-1. Visit the landing page
-2. Click "Sign Up" to create an account
-3. Enter your name, email, and password
-4. You'll be automatically logged in and redirected to the dashboard
-
-### Building Your Resume
-1. Navigate to "Resume Builder" from the sidebar
-2. Fill in your personal information
-3. Add work experience entries
-4. Add your skills (comma-separated)
-5. Preview updates in real-time
-6. Export as PDF when ready
-
-### Comparing Your Resume
-1. Go to "Resume Comparator"
-2. Paste your resume text in the left panel
-3. Paste the job description in the right panel
-4. Click "Compare" to see the analysis
-5. Review matching and missing keywords
-6. Follow the suggestions to improve your resume
-
-### Tracking Applications
-1. Navigate to "Job Tracker"
-2. Click "Add Application" or the + button on any column
-3. Fill in job details
-4. Applications are organized by status
-5. Edit or delete as needed
-
-### Preparing for Interviews
-1. Go to "Interview Prep"
-2. Browse common questions by category
-3. Mark questions as reviewed
-4. Read interview tips
-5. Add company research notes
-
-### Using Templates
-1. Navigate to "Templates"
-2. Choose a template type
-3. Click "Use Template"
-4. Customize the placeholders
-5. Copy to clipboard when ready
-
-### Browsing Jobs
-1. Go to "Job Alerts"
-2. Use filters to narrow down results
-3. Click on a job to view details
-4. Save interesting jobs to your tracker
-
-## Data Persistence
-
-All data is stored locally in your browser using LocalStorage:
-- User authentication
-- Resume data
-- Applications
-- Interview prep progress
-- Custom templates
-
-**Note:** Clearing browser data will delete all stored information.
-
-## Project Structure
-
-```
-ApplyHereAI/
-├── app/                      # Next.js App Router pages
-│   ├── auth/                 # Authentication pages
-│   ├── dashboard/            # Protected dashboard pages
-│   ├── layout.tsx            # Root layout
-│   ├── page.tsx              # Landing page
-│   └── globals.css           # Global styles
-├── components/               # React components
-│   ├── landing/              # Landing page components
-│   ├── dashboard/            # Dashboard components
-│   ├── resume/               # Resume builder components
-│   ├── comparator/           # Resume comparator components
-│   ├── interview/            # Interview prep components
-│   ├── tracker/              # Application tracker components
-│   ├── templates/            # Template components
-│   ├── insights/             # Company insights components
-│   ├── jobs/                 # Job alerts components
-│   └── ui/                   # Reusable UI components
-├── contexts/                 # React contexts
-│   ├── AuthContext.tsx       # Authentication state
-│   └── ThemeContext.tsx      # Theme state
-├── hooks/                    # Custom React hooks
-│   ├── useLocalStorage.ts
-│   └── useTheme.ts
-├── lib/                      # Utility functions
-│   ├── storage.ts            # LocalStorage utilities
-│   ├── mockData.ts           # Demo data
-│   ├── keywordExtractor.ts   # Resume comparison logic
-│   └── pdfExport.ts          # PDF generation
-├── types/                    # TypeScript type definitions
-│   └── index.ts
-└── tailwind.config.ts        # Tailwind configuration
-```
-
-## Key Features Explained
-
-### Theme Switching
-The app supports both light and dark themes. Click the theme toggle button in the navigation to switch between modes. Your preference is saved to LocalStorage.
-
-### Responsive Design
-The application is fully responsive and works on:
-- Desktop (1024px+)
-- Tablet (768px - 1023px)
-- Mobile (< 768px)
-
-### Animations
-Smooth animations powered by Framer Motion:
-- Page transitions
-- Card hover effects
-- Modal animations
-- Button interactions
-
-## Browser Compatibility
-
-- Chrome/Edge (recommended)
-- Firefox
-- Safari
-- Opera
-
-## Known Limitations
-
-1. **No Real Backend**: All data is client-side only
-2. **No Real Authentication**: Authentication is simulated
-3. **No Drag-and-Drop**: Kanban board uses status changes instead of physical dragging
-4. **Static Job Data**: Job listings are mock data, not live API
-5. **No Email Sending**: Templates must be copied manually
-
-## Future Enhancements
-
-- Real backend integration
-- User authentication with JWT
-- Real-time job API integration
-- Actual drag-and-drop functionality
-- Email integration for templates
-- Resume templates with different styles
-- Interview scheduling
-- Salary negotiation tools
-
-## Credits
-
-Inspired by [Huntr.co](https://huntr.co) for UI/UX design patterns.
-
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS.
-
-## License
-
-This is a demonstration project for educational purposes.
-
----
-
-## Getting Started with Development
-
-1. Clone the repository
-2. Run `npm install`
-3. Run `npm run dev`
-4. Start building!
-
-For production build:
 ```bash
+# Create production build
 npm run build
+
+# Start production server
 npm start
 ```
 
-## Contributing
+## 📦 Deploy to Vercel
 
-This is a demonstration project, but suggestions and improvements are welcome!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/parsabanaei/ApplyHere)
+
+### Manual Deployment
+
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Click "New Project"
+4. Import your GitHub repository
+5. Vercel will auto-detect Next.js and configure everything
+6. Click "Deploy"
+
+### Environment Variables
+
+No environment variables are required! This is a 100% frontend application using LocalStorage for data persistence.
+
+## 📁 Project Structure
+
+```
+ApplyHere/
+├── app/                      # Next.js App Router pages
+│   ├── auth/                # Authentication pages
+│   ├── dashboard/           # Dashboard pages
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Landing page
+├── components/              # React components
+│   ├── landing/            # Landing page components
+│   ├── dashboard/          # Dashboard components
+│   ├── resume/             # Resume builder components
+│   ├── comparator/         # Resume comparator components
+│   ├── tracker/            # Application tracker components
+│   └── ui/                 # Reusable UI components
+├── contexts/               # React contexts
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions
+├── types/                  # TypeScript type definitions
+└── public/                 # Static assets
+```
+
+## 🎨 Design System
+
+- **Color Palette**: Enterprise-level slate and indigo
+- **Typography**: Inter font family
+- **Light & Dark Mode**: Full theme support
+- **Responsive**: Mobile first design
+
+## ✨ Key Features Details
+
+### Resume Builder
+
+- ATS-friendly formatting
+- Multiple professional templates
+- Auto-generated cover letters
+- PDF export functionality
+- Real-time preview
+
+### Resume Comparator
+
+- Keyword extraction and matching
+- Visual highlighting of matches/misses
+- Match percentage calculation
+- TXT file upload support
+
+### Application Tracker
+
+- Kanban board interface
+- Drag-and-drop functionality
+- Status tracking (Wishlist → Accepted)
+- Notes and date tracking
+
+### Interview Prep
+
+- Common interview questions with sample answers
+- Appearance and behavior tips
+- Company research tools
+- Category-based organization
+
+## 🔒 Privacy & Data
+
+- **100% Client-Side**: All data stored in browser LocalStorage
+- **No Backend**: No server, no database, no data collection
+- **Private**: Your data never leaves your browser
+- **Portable**: Export your data anytime
+
+## 📱 Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## 🤝 Contributing
+
+This is a class project for CPSC 349 - Web Front-End Engineering at CSUF.
+
+## 📄 License
+
+Educational project - Fall 2025
+
+## 👨‍💻 Author
+
+**Parsa Banaei & Rasha Boura**
+
+- GitHub: [@parsabanaei](https://github.com/parsabanaei)
+
+- GitHub: [@rashaboura](https://github.com/rashaboura)
+
+## 🙏 Acknowledgments
+
+- CSUF CPSC 349 Web Front-End Engineering
+- Fall 2025
 
 ---
 
-**ApplyHere.ai** - Streamline your job search, land your dream job! 🚀
-
+**Made with ❤️ for job seekers everywhere**
