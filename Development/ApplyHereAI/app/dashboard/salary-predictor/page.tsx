@@ -161,3 +161,6 @@ export default function SalaryPredictorPage() {
     </main>
   );
 }
+
+
+// new file: added by Rasha
