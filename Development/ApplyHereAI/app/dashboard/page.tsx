@@ -18,6 +18,7 @@ import {
   FaChartLine,
   FaUserTie,
   FaCheckCircle,
+  FaBell,
   FaDollarSign,
   FaBrain,
   FaArrowRight,
