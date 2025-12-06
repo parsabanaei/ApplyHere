@@ -25,7 +25,7 @@ export function TemplateSelector({
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
         {RESUME_TEMPLATES.map((template) => (
           <motion.button
             key={template.id}
@@ -39,7 +39,7 @@ export function TemplateSelector({
             }`}
           >
             {/* Template Preview */}
-            <div className="mb-3 h-24 rounded overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 flex flex-col gap-1">
+            <div className="mb-2 h-16 sm:h-20 md:h-24 rounded overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 flex flex-col gap-1">
               {/* Mock Header */}
               <div
                 className="h-2 rounded"
@@ -59,10 +59,10 @@ export function TemplateSelector({
 
             {/* Template Name */}
             <div className="text-center">
-              <p className="font-semibold text-sm text-slate-900 dark:text-white">
+              <p className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-white">
                 {template.name}
               </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1 sm:line-clamp-2 hidden sm:block">
                 {template.description}
               </p>
             </div>

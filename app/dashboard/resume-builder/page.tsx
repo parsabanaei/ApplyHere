@@ -114,10 +114,10 @@ export default function ResumeBuilderPage() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="h-full flex flex-col"
+      className="flex flex-col space-y-6"
     >
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-soft p-6 mb-6">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-soft p-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
@@ -147,9 +147,9 @@ export default function ResumeBuilderPage() {
       />
 
       {/* Split Panel */}
-      <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 min-h-[600px]">
         {/* Editor Panel */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-soft overflow-hidden flex flex-col">
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-soft overflow-hidden flex flex-col min-h-[600px]">
           <div className="border-b border-slate-200 dark:border-slate-700 p-4 flex-shrink-0">
             <h2 className="font-semibold text-slate-900 dark:text-white">
               Editor
@@ -161,7 +161,7 @@ export default function ResumeBuilderPage() {
         </div>
 
         {/* Preview Panel */}
-        <div className="bg-slate-100 dark:bg-slate-900 rounded-lg shadow-soft overflow-hidden flex flex-col">
+        <div className="bg-slate-100 dark:bg-slate-900 rounded-lg shadow-soft overflow-hidden flex flex-col min-h-[600px]">
           <div className="border-b border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-800 flex-shrink-0">
             <div className="flex items-center justify-between">
               <h2 className="font-semibold text-slate-900 dark:text-white">
